@@ -31,13 +31,26 @@ class KuchuanSpider(scrapy.Spider):
 		if not item:
 			return
 		app_package = item['app_package']
-		if response.text:
-			item['down'] = response.text
+		# down = item.get('down', '')
+		text = response.text
+		# if down:
+		# 	# 如果有down，说明1爬了，返回的是2的结果，
+		# 	if response.text:
+		# 		item['trend'] = text
+		# 	else:
+		# 		item['trend'] = 'none'
+		# else:
+		# 	# 如果没有down，说明1还没爬，将text交给down，并请求2
+		if text:
+			item['down'] = text
 		else:
 			item['down'] = ''
 
 		self.url2 = self.trend_url.format(app_package=app_package, now=int(time.time()) * 1000)
-		yield scrapy.Request(self.url2, meta={'item': item, 'dont_redirect': True}, dont_filter=True, callback=self.parse_trend)
+		yield scrapy.Request(self.url2, meta={'item': item, 'dont_redirect': True}, dont_filter=True,
+		                     callback=self.parse_trend)
+
+
 
 	def parse_trend(self, response):
 		item = response.meta.get('item', '')
