@@ -16,12 +16,12 @@ proxyServer = "http://proxy.abuyun.com:9020"
 # proxyPass = "2835A47D56143D62"
 
 # 1
-# proxyUser = "HJA1354AT829M77D"
-# proxyPass = "F222C0D807890356"
+# proxyUser = "HQ78N3Y82239165D"
+# proxyPass = "AA99073C3271DBFA"
 
 # 2
-# proxyUser = "H8J738EHR4H5GE5D"
-# proxyPass = "3018672C5A167A3D"
+proxyUser = "H9SE505130760R6D"
+proxyPass = "FBBA776C3C72866D"
 
 # 3
 # proxyUser = "HWAP93ES770B921D"
@@ -36,8 +36,8 @@ proxyServer = "http://proxy.abuyun.com:9020"
 # proxyPass = "AA99073C3271DBFA"
 
 # 6
-proxyUser = "HQ78N3Y82239165D"
-proxyPass = "AA99073C3271DBFA"
+# proxyUser = "HQ78N3Y82239165D"
+# proxyPass = "AA99073C3271DBFA"
 
 
 # for Python3
