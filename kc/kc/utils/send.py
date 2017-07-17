@@ -21,7 +21,7 @@ def send_key(key):
 	try:
 		with mysql.cursor() as cursor:
 			# sql = """select id, app_package from wandoujia_app_info ORDER BY id"""
-			sql = """select id, app_package from kuchuan_all where down like '%"categories"%'"""
+			sql = """select id, app_package from kuchuan_all where down like '%"categories"%' and id < 140000"""
 			cursor.execute(sql)
 			print('execute begain')
 			results = cursor.fetchall()
