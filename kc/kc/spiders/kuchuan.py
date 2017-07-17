@@ -43,9 +43,9 @@ class KuchuanSpider(scrapy.Spider):
 		# 	# 如果没有down，说明1还没爬，将text交给down，并请求2
 		if text:
 			item['down'] = text
+			print(item['down'][:50])
 		else:
 			item['down'] = ''
-
 		self.url2 = self.trend_url.format(app_package=app_package, now=int(time.time()) * 1000)
 		yield scrapy.Request(self.url2, meta={'item': item, 'dont_redirect': True}, dont_filter=True,
 		                     callback=self.parse_trend)
