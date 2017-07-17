@@ -20,7 +20,8 @@ def send_key(key):
 	# mysql = pymysql.Connect(host='localhost', user='root', password='3646287', db='spiders', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 	try:
 		with mysql.cursor() as cursor:
-			sql = """select id, app_package from wandoujia_app_info ORDER BY id"""
+			# sql = """select id, app_package from wandoujia_app_info ORDER BY id"""
+			sql = """select id, app_package from kuchuan_all where down like '%"categories"%'"""
 			cursor.execute(sql)
 			print('execute begain')
 			results = cursor.fetchall()

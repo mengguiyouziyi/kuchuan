@@ -50,8 +50,6 @@ class KuchuanSpider(scrapy.Spider):
 		yield scrapy.Request(self.url2, meta={'item': item, 'dont_redirect': True}, dont_filter=True,
 		                     callback=self.parse_trend)
 
-
-
 	def parse_trend(self, response):
 		item = response.meta.get('item', '')
 		if not item:
