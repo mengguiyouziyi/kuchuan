@@ -12,12 +12,11 @@ class KuchuanSpider(scrapy.Spider):
 	trend_url = 'http://android.kuchuan.com/histortytotaldownload?packagename={app_package}&start_date=&end_date=&longType=3-m&date={now}'
 
 	def start_requests(self):
-		while True:
-			id_app_package = get_key('id_app_package')
-			# id_app_package = '134499~adora.earth'
-			# id_app_package = '134499~adora.earth'
-			if not id_app_package:
-				continue
+		# while True:
+		# 	id_app_package = get_key('id_app_package')
+			id_app_package = '136824~air.com.invisibleowl.tattooyourselfcamera'
+			# if not id_app_package:
+			# 	continue
 			lis = id_app_package.split('~')
 			id = int(lis[0])
 			app_package = lis[1]
