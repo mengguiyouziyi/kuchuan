@@ -118,7 +118,7 @@ USER_AGENT_CHOICES = [
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-	'kc.middlewares.ProxyMiddleware': 1,
+	# 'kc.middlewares.ProxyMiddleware': 1,
 	'kc.middlewares.RetryMiddleware': 110,
 	'kc.middlewares.RotateUserAgentMiddleware': 2,
 }
