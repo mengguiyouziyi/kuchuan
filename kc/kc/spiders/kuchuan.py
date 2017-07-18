@@ -15,6 +15,7 @@ class KuchuanSpider(scrapy.Spider):
 		while True:
 			id_app_package = get_key('id_app_package')
 			# id_app_package = '134499~adora.earth'
+			# id_app_package = '134499~adora.earth'
 			if not id_app_package:
 				continue
 			lis = id_app_package.split('~')
