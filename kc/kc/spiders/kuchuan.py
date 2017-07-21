@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import time
-import datetime
+from datetime import datetime
 from kc.items import KcItem
 from kc.utils.get import get_key
 from kc.settings import SQL_DATETIME_FORMAT, SQL_DATE_FORMAT
