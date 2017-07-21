@@ -30,10 +30,13 @@ class KuchuanSpider(scrapy.Spider):
 			yield scrapy.Request(self.url1, meta={'item': item, 'dont_redirect': True}, dont_filter=True)
 
 	def parse(self, response):
+
 		item = response.meta.get('item', '')
 		if not item:
 			return
 		app_package = item['app_package']
+		print(item['id'])
+		print(app_package)
 		# down = item.get('down', '')
 		text = response.text
 		# if down:
@@ -46,7 +49,7 @@ class KuchuanSpider(scrapy.Spider):
 		# 	# 如果没有down，说明1还没爬，将text交给down，并请求2
 		if text:
 			item['down'] = text
-			print(item['down'][:50])
+			# print(item['down'][:50])
 		else:
 			item['down'] = ''
 		self.url2 = self.trend_url.format(app_package=app_package, now=int(time.time()) * 1000)
@@ -62,5 +65,7 @@ class KuchuanSpider(scrapy.Spider):
 		else:
 			item['trend'] = ''
 		item["crawl_time"] = datetime.now().strftime(SQL_DATETIME_FORMAT)
+		print(item['trend'][:50])
+
 
 		return item
