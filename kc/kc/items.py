@@ -14,3 +14,4 @@ class KcItem(scrapy.Item):
     app_package = scrapy.Field()
     down = scrapy.Field()
     trend = scrapy.Field()
+    crawl_time = scrapy.Field()

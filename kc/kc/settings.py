@@ -34,12 +34,12 @@ NEWSPIDER_MODULE = 'kc.spiders'
 # ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 100
+CONCURRENT_REQUESTS = 100
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 3
+# DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -48,7 +48,7 @@ DOWNLOAD_DELAY = 3
 COOKIES_ENABLED = False
 
 # DEBUG INFO WARNING ERROR CRITICAL
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'INFO'
 
 LOG_STDOUT = True
 
@@ -118,7 +118,7 @@ USER_AGENT_CHOICES = [
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-	# 'kc.middlewares.ProxyMiddleware': 1,
+	'kc.middlewares.ProxyMiddleware': 1,
 	'kc.middlewares.RetryMiddleware': 110,
 	'kc.middlewares.RotateUserAgentMiddleware': 2,
 }
@@ -156,7 +156,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-
+SQL_DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+SQL_DATE_FORMAT = "%Y-%m-%d"
 
 
 

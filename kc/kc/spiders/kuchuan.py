@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import json
 import time
+import datetime
 from kc.items import KcItem
 from kc.utils.get import get_key
+from kc.settings import SQL_DATETIME_FORMAT, SQL_DATE_FORMAT
 
 
 class KuchuanSpider(scrapy.Spider):
@@ -12,11 +13,13 @@ class KuchuanSpider(scrapy.Spider):
 	trend_url = 'http://android.kuchuan.com/histortytotaldownload?packagename={app_package}&start_date=&end_date=&longType=3-m&date={now}'
 
 	def start_requests(self):
-		# while True:
-		# 	id_app_package = get_key('id_app_package')
-			id_app_package = '136824~air.com.invisibleowl.tattooyourselfcamera'
-			# if not id_app_package:
-			# 	continue
+		# ls = ['145819~com.leaguestat.lsmobileappringettecanada', '148145~com.sarawut.kidsdrawingofdinosaurs', '152953~com.sixtyfourthirtytwo.terra', '153881~com.zzzz.hamidou', '158748~com.apptreestudios.gravityglasshit', '160232~com.assistance', '214602~fr.yeast', '238474~hksarg.bd.mwcs', '269911~com.sp2p.SXYG', '290994~com.phonedeco.themecontents.theme_10000049', '294626~com.magook.kind8_198', '339048~com.ecmoban.android.gflmall', '339300~com.ecpalm.parenting.android', '339861~com.editorphotowahey.photoeditorcutpast', '408347~com.babywhere.babyanimals', '418867~zm.mobile.zongbuzhizuobu767598', '442641~com.brodev.socialapp.urbangroweronline', '522768~cityguide.Graz', '560740~com.jsjwdx.jwnw', '581072~com.jh.APP5f44dd862a8d4d2ca3a89701af611638.news', '619191~com.platoevolved.dressupkitty', '619250~com.platomix.mobileenterprise112', '653283~com.lianyun.jiaju', '664626~com.kxmzlyhg.chuangyidabaike', '670672~com.radio.station.KXTG.AM', '770295~com.vinzstudios.Box_Appraiser_DGM_Edition', '849332~com.yk.cosmo']
+		# for l in ls:
+		while True:
+			id_app_package = get_key('id_app_package')
+			# id_app_package = l
+			if not id_app_package:
+				continue
 			lis = id_app_package.split('~')
 			id = int(lis[0])
 			app_package = lis[1]
@@ -58,5 +61,6 @@ class KuchuanSpider(scrapy.Spider):
 			item['trend'] = response.text
 		else:
 			item['trend'] = ''
+		item["crawl_time"] = datetime.now().strftime(SQL_DATETIME_FORMAT)
 
 		return item

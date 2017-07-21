@@ -16,14 +16,18 @@ sys.path.append(father_path)
 
 
 def send_key(key):
+	"""
+		本机 localhost；公司 etl2.innotree.org；服务器 etl1.innotree.org
+		"""
 	mysql = pymysql.connect(host='etl1.innotree.org', port=3308, user='spider', password='spider', db='spider', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 	# mysql = pymysql.Connect(host='localhost', user='root', password='3646287', db='spiders', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 	try:
 		with mysql.cursor() as cursor:
-			# sql = """select id, app_package from wandoujia_app_info where id > 818607"""
-			sql = """select id, app_package from kuchuan_all where down like '%"categories"%' and id < 140000"""
-			cursor.execute(sql)
+			# input-time=‘2017-07-20’
+			sql = """select id, app_package from wandoujia_app_info where input_time='2017-07-20' limit 100"""
+			# sql = """select id, app_package from kuchuan_all where down like '%script%'"""
 			print('execute begain')
+			cursor.execute(sql)
 			results = cursor.fetchall()
 			values = [str(i['id']) + '~' + i['app_package'].strip() for i in results]
 	finally:
