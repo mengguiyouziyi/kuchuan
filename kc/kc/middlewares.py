@@ -37,8 +37,8 @@ proxyServer = "http://proxy.abuyun.com:9020"
 
 # 百科的账号
 # 1
-# proxyUser = "HS42FV2R583524HD"
-# proxyPass = "BB5F3DAE917E484E"
+proxyUser = "HS42FV2R583524HD"
+proxyPass = "BB5F3DAE917E484E"
 
 # 2
 # proxyUser = "H20X28E37Z5R11UD"
@@ -53,8 +53,8 @@ proxyServer = "http://proxy.abuyun.com:9020"
 # proxyPass = "8F2622D2D6A1A73F"
 
 # 5
-proxyUser = "HI4Z5PI5D1Y44S2D"
-proxyPass = "5D698C9C15113ACE"
+# proxyUser = "HI4Z5PI5D1Y44S2D"
+# proxyPass = "5D698C9C15113ACE"
 
 # for Python3
 proxyAuth = "Basic " + base64.urlsafe_b64encode(bytes((proxyUser + ":" + proxyPass), "ascii")).decode("utf8")
