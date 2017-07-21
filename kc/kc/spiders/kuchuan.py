@@ -35,8 +35,8 @@ class KuchuanSpider(scrapy.Spider):
 		if not item:
 			return
 		app_package = item['app_package']
-		print(item['id'])
-		print(app_package)
+		# print(item['id'])
+		# print(app_package)
 		# down = item.get('down', '')
 		text = response.text
 		# if down:
@@ -65,7 +65,7 @@ class KuchuanSpider(scrapy.Spider):
 		else:
 			item['trend'] = ''
 		item["crawl_time"] = datetime.now().strftime(SQL_DATETIME_FORMAT)
-		print(item['trend'][:50])
+		# print(item['trend'][:50])
 
 
 		return item
