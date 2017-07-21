@@ -37,12 +37,12 @@ proxyServer = "http://proxy.abuyun.com:9020"
 
 # 百科的账号
 # 1
-# proxyUser = "HS42FV2R583524HD"
-# proxyPass = "BB5F3DAE917E484E"
+proxyUser = "HS42FV2R583524HD"
+proxyPass = "BB5F3DAE917E484E"
 
 # 2
-proxyUser = "H20X28E37Z5R11UD"
-proxyPass = "61CE0860F50555CB"
+# proxyUser = "H20X28E37Z5R11UD"
+# proxyPass = "61CE0860F50555CB"
 
 # 3
 # proxyUser = "H51N0CWJLZX5981D"

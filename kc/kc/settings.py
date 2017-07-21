@@ -31,7 +31,7 @@ NEWSPIDER_MODULE = 'kc.spiders'
 #USER_AGENT = 'baidu (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-# ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 100
@@ -48,7 +48,7 @@ CONCURRENT_REQUESTS = 100
 COOKIES_ENABLED = False
 
 # DEBUG INFO WARNING ERROR CRITICAL
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
 
 LOG_STDOUT = True
 

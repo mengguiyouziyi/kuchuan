@@ -24,7 +24,7 @@ def send_key(key):
 	try:
 		with mysql.cursor() as cursor:
 			# input-time=‘2017-07-20’
-			sql = """select id, app_package from wandoujia_app_info where input_time='2017-07-20' limit 100"""
+			sql = """select id, app_package from wandoujia_app_info where input_time='2017-07-20'"""
 			# sql = """select id, app_package from kuchuan_all where down like '%script%'"""
 			print('execute begain')
 			cursor.execute(sql)

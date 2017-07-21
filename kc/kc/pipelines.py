@@ -20,7 +20,7 @@ class MysqlPipeline(object):
 
 	def process_item(self, item, spider):
 		# sql = """insert into kuchuan_all(id, app_package, down, trend) VALUES(%s, %s, %s, %s) ON DUPLICATE KEY UPDATE app_package=VALUES(app_package), down=VALUES(down), down=VALUES(trend)"""
-		sql = """replace into kuchuan_all(id, app_package, down, trend, crawl_time) VALUES(%s, %s, %s, %s, %s)"""
+		sql = """replace into kuchuan_all_copy(id, app_package, down, trend, crawl_time) VALUES(%s, %s, %s, %s, %s)"""
 		args = (item["id"], item["app_package"], item["down"], item["trend"], item["crawl_time"])
 		self.cursor.execute(sql, args=args)
 		self.conn.commit()
