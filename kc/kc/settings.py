@@ -157,7 +157,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 SQL_DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
-SQL_DATE_FORMAT = "%Y-%m-%d"
+# SQL_DATE_FORMAT = "%Y-%m-%d"
 
 
 

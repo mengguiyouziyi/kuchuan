@@ -2,6 +2,8 @@
 
 import os
 import sys
+import time
+from datetime import datetime
 from os.path import dirname
 
 import pymysql
@@ -24,7 +26,7 @@ def send_key(key):
 	try:
 		with mysql.cursor() as cursor:
 			# input-time=‘2017-07-20’
-			sql = """select id, app_package from wandoujia_app_info where input_time='2017-07-20'"""
+			sql = """select id, app_package from kuchuan_down"""
 			# sql = """select id, app_package from kuchuan_all where down like '%script%'"""
 			print('execute begain')
 			cursor.execute(sql)
@@ -37,9 +39,12 @@ def send_key(key):
 
 	if values:
 		for i, value in enumerate(values):
-			print(i+1)
 			red.send_to_queue(key, value)
 
 
 if __name__ == '__main__':
-	send_key(key='id_app_package')
+	while True:
+		send_key(key='id_app_package')
+		print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+		print('tomorrow go on~~~')
+		time.sleep(86400)

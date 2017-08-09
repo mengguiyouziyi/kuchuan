@@ -11,34 +11,10 @@ from random import choice
 # 代理服务器
 proxyServer = "http://proxy.abuyun.com:9020"
 
-# 代理隧道验证信息
-# proxyUser = "H4XGPM790E93518D"
-# proxyPass = "2835A47D56143D62"
-
-# 1
-# proxyUser = "HQ78N3Y82239165D"
-# proxyPass = "AA99073C3271DBFA"
-
-# 2
-# proxyUser = "HP098K11Z863G14D"
-# proxyPass = "2EBC19D19C17D8ED"
-
-# 3
-# proxyUser = "H9SE505130760R6D"
-# proxyPass = "FBBA776C3C72866D"
-
-# 4
-# proxyUser = "H9CF0585O0838O5D"
-# proxyPass = "3E1CA8BB33560FF6"
-
-# 5
-# proxyUser = "H8K84WW7038741GD"
-# proxyPass = "67EC4B76C72A235C"
-
 # 百科的账号
 # 1
-proxyUser = "HS42FV2R583524HD"
-proxyPass = "BB5F3DAE917E484E"
+proxyUser = "H29A85A238Y92VZD"
+proxyPass = "9EB477D3447C3F31"
 
 # 2
 # proxyUser = "H20X28E37Z5R11UD"
