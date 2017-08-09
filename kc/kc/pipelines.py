@@ -26,7 +26,7 @@ class MysqlPipeline(object):
 			self.conn.commit()
 			print(str(item['id']) + ' success')
 		elif spider.name == 'kuchuan_daily':
-			sql = """insert into kuchuan_down_num(app_package, down_num, crawl_time) VALUES(%s, %s, %s, %s, %s)"""
+			sql = """insert into kuchuan_down_num(app_package, down_num, crawl_time) VALUES(%s, %s, %s)"""
 			args = (item["app_package"], item["down_num"], item["crawl_time"])
 			self.cursor.execute(sql, args=args)
 			self.conn.commit()
