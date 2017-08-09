@@ -26,12 +26,12 @@ def send_key(key):
 	try:
 		with mysql.cursor() as cursor:
 			# input-time=‘2017-07-20’
-			sql = """select id, app_package from kuchuan_down"""
+			sql = """select id, sapp_pkgname from kuchuan_down"""
 			# sql = """select id, app_package from kuchuan_all where down like '%script%'"""
 			print('execute begain')
 			cursor.execute(sql)
 			results = cursor.fetchall()
-			values = [str(i['id']) + '~' + i['app_package'].strip() for i in results]
+			values = [str(i['id']) + '~' + i['sapp_pkgname'].strip() for i in results]
 	finally:
 		mysql.close()
 
