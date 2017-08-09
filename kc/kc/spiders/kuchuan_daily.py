@@ -20,6 +20,7 @@ class KuchuanSpider(scrapy.Spider):
 			id_app_package = get_key('id_app_package')
 			# id_app_package = '0~com.aa.generaladaptiveapps'
 			if not id_app_package:
+				time.sleep(180)
 				continue
 			lis = id_app_package.split('~')
 			# id = int(lis[0])
