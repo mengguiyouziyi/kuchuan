@@ -39,7 +39,7 @@ class KuchuanSpider(scrapy.Spider):
 		{"status":200, "msg":"请求成功", "data":{"联想":294,"OPPO":24,"vivo":6993}}
 		"""
 		# text = json.loads(response.text) if response.text else ''
-		data = json.loads(response.text)['data'] if response.text else {}
+		data = json.loads(response.text)['data'] if '请求成功' in response.text else {}
 		nums_unknown = data.values() if data else []
 		nums = [num for num in nums_unknown if isinstance(num, int)]
 		item['down_num'] = sum(nums)

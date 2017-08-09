@@ -30,4 +30,4 @@ class MysqlPipeline(object):
 			args = (item["app_package"], item["down_num"], item["crawl_time"])
 			self.cursor.execute(sql, args=args)
 			self.conn.commit()
-			print(str(item['app_package']) + ' success')
+			# print(str(item['app_package']) + ' success')
