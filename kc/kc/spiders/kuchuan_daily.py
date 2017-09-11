@@ -2,6 +2,7 @@
 import scrapy
 import time
 import json
+from scrapy.exceptions import CloseSpider
 from datetime import datetime
 from kc.items import KcItem
 from kc.utils.get import get_key
@@ -16,11 +17,15 @@ class KuchuanSpider(scrapy.Spider):
 	def start_requests(self):
 		# ls = ['145819~com.leaguestat.lsmobileappringettecanada', '148145~com.sarawut.kidsdrawingofdinosaurs', '152953~com.sixtyfourthirtytwo.terra', '153881~com.zzzz.hamidou', '158748~com.apptreestudios.gravityglasshit', '160232~com.assistance', '214602~fr.yeast', '238474~hksarg.bd.mwcs', '269911~com.sp2p.SXYG', '290994~com.phonedeco.themecontents.theme_10000049', '294626~com.magook.kind8_198', '339048~com.ecmoban.android.gflmall', '339300~com.ecpalm.parenting.android', '339861~com.editorphotowahey.photoeditorcutpast', '408347~com.babywhere.babyanimals', '418867~zm.mobile.zongbuzhizuobu767598', '442641~com.brodev.socialapp.urbangroweronline', '522768~cityguide.Graz', '560740~com.jsjwdx.jwnw', '581072~com.jh.APP5f44dd862a8d4d2ca3a89701af611638.news', '619191~com.platoevolved.dressupkitty', '619250~com.platomix.mobileenterprise112', '653283~com.lianyun.jiaju', '664626~com.kxmzlyhg.chuangyidabaike', '670672~com.radio.station.KXTG.AM', '770295~com.vinzstudios.Box_Appraiser_DGM_Edition', '849332~com.yk.cosmo']
 		# for l in ls:
+		x = 0
 		while True:
 			id_app_package = get_key('id_app_package')
 			# id_app_package = '0~com.aa.generaladaptiveapps'
 			if not id_app_package:
-				time.sleep(180)
+				x += 1
+				if x > 5:
+					raise CloseSpider('no datas')
+				time.sleep(60)
 				continue
 			lis = id_app_package.split('~')
 			# id = int(lis[0])
