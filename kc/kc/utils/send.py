@@ -43,8 +43,8 @@ def send_key(key):
 
 
 if __name__ == '__main__':
-	while True:
-		send_key(key='id_app_package')
-		print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-		print('tomorrow go on~~~')
-		time.sleep(86400)
+	# while True:
+	send_key(key='id_app_package')
+		# print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+		# print('tomorrow go on~~~')
+		# time.sleep(86400)
